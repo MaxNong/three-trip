@@ -1,0 +1,27 @@
+.card-content {
+  background-color: white;
+  header,footer{
+    background-color: #3c8dbc;
+    color: white;
+    font-size: 14px;
+  }
+}
+.text {
+  font-size: 14px;
+}
+
+.item {
+  padding: 0 20px 0 20px;
+  min-width: 56px;
+  .card-icon{
+    line-height: 40px;
+  }
+  &:hover{
+    background-color: blue;
+    color: white;
+    cursor: hand;
+  }
+}
+.plan-card-box{
+  width:auto !important;
+}

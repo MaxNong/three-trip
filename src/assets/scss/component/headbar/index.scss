@@ -1,0 +1,39 @@
+body > .el-container {
+  margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
+.header-content {
+  height: 100%;
+  width: 100%;
+  background-color: #3c8dbc;
+  color: white;
+  font-size: 14px;
+  li{
+    display: inline-block;
+    line-height: 60px;
+    &:not(:first-child){
+      width: 60px;
+      text-align: center;
+      float: right;
+      &:hover{
+        background-color: #367fa9;
+      }
+    }
+    &:first-child{
+      font-size: 18px;
+      margin-left: 20px;
+      color: gold;
+    }
+  }
+}
+.plan-save-singleinfo{
+  width: 100px;float: right;margin-top: 20px;
+}

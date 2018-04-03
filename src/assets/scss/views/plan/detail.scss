@@ -1,0 +1,19 @@
+.plan-detail-title{
+  font-weight: 700;
+  font-size: 20px;
+}
+.plan-detail-boxTitle{
+  text-align: left;
+  height: 26px;
+  line-height: 26px;
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid #3c8dbc;
+  span{
+    background-color: #3c8dbc;
+    display: block;
+    position: absolute;
+    color: white;
+    padding: 0 10px
+  }
+}
