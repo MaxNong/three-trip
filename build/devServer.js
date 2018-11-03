@@ -1,4 +1,5 @@
 var opn = require('opn') //自动打开浏览器
+var path = require('path')
 var express = require('express') //express微型服务器
 var webpack = require('webpack') //webpack打包模块
 var webpackConfig = require('./webpack.config')
