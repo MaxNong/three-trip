@@ -2,7 +2,6 @@ import * as THREE from 'three'
 window.THREE = THREE
 function initControl () {
  require("../../three/examples/js/controls/OrbitControls")
- require("../../three/examples/js/loaders/OBJLoader")
 }
 
 initControl()
@@ -78,7 +77,7 @@ var loader = new THREE.OBJLoader();
 // load a resource
 loader.load(
 	// resource URL
-	'obj/Zed_StormNinja.obj',
+	'models/monster.obj',
 	// called when resource is loaded
 	function ( object ) {
 
@@ -98,7 +97,6 @@ loader.load(
 
 	}
 );
-
 
 var light = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6);
     light.position.set(0, 200, 0);

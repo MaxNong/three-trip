@@ -2,7 +2,6 @@ import * as THREE from 'three'
 window.THREE = THREE
 function initControl () {
  require("../../three/examples/js/controls/OrbitControls")
- require("../../three/examples/js/loaders/OBJLoader")
 }
 
 initControl()

@@ -2,7 +2,6 @@ import * as THREE from 'three'
 window.THREE = THREE
 function initControl () {
  require("../../three/examples/js/controls/OrbitControls")
- require("../../three/examples/js/loaders/OBJLoader")
 }
 
 initControl()
@@ -13,7 +12,7 @@ console.log(window.THREE.OrbitControls, 888)
 var scene = new THREE.Scene()
 // scene.background = new THREE.Color(0xa0a0a0);
 scene.background = new THREE.CubeTextureLoader()
-         .setPath( '/cube/skyboxsun25deg/' )
+         .setPath( '/textures/cube/skyboxsun25deg/' )
          .load( [ 'px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg' ] );
 // scene.fog = new THREE.Fog(0xa0a0a0, 500, 1000);
 
@@ -56,11 +55,11 @@ ground.position.set(0, -5, 0);
 ground.rotation.x = -Math.PI / 2;
 ground.receiveShadow = true;
 scene.add(ground);
-var grid = new THREE.GridHelper(1000, 1000, 0x000000, 0x000000);
-grid.position.y = -5;
-grid.material.opacity = 0.2;
-grid.material.transparent = true;
-scene.add(grid);
+// var grid = new THREE.GridHelper(1000, 1000, 0x000000, 0x000000);
+// grid.position.y = -5;
+// grid.material.opacity = 0.2;
+// grid.material.transparent = true;
+// scene.add(grid);
 
 //设置灯光
 // var ambientLight = new THREE.AmbientLight(0x35B558)
@@ -72,33 +71,6 @@ scene.add(grid);
 // spotLight.position.y = 60
 // spotLight.position.z = -10
 // scene.add(spotLight)
-
-var loader = new THREE.OBJLoader();
-
-// load a resource
-loader.load(
-	// resource URL
-	'obj/Zed_StormNinja.obj',
-	// called when resource is loaded
-	function ( object ) {
-
-		scene.add( object );
-
-	},
-	// called when loading is in progresses
-	function ( xhr ) {
-
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-
-	},
-	// called when loading has errors
-	function ( error ) {
-
-		console.log( 'An error happened' );
-
-	}
-);
-
 
 var light = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6);
     light.position.set(0, 200, 0);

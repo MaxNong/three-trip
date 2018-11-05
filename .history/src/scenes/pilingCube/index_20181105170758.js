@@ -2,7 +2,6 @@ import * as THREE from 'three'
 window.THREE = THREE
 function initControl () {
  require("../../three/examples/js/controls/OrbitControls")
- require("../../three/examples/js/loaders/OBJLoader")
 }
 
 initControl()
@@ -78,7 +77,7 @@ var loader = new THREE.OBJLoader();
 // load a resource
 loader.load(
 	// resource URL
-	'obj/Zed_StormNinja.obj',
+	'obj/Z.obj',
 	// called when resource is loaded
 	function ( object ) {
 
