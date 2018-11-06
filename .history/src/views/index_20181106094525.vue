@@ -11,7 +11,7 @@ export default {
 		return {}
 	},
 	mounted() {
-		this.setScene()
+		this.setScent()
 		this.setCamera()
 		this.setCameraControl()
 		this.setRenderer()
@@ -28,7 +28,7 @@ export default {
 			requestAnimationFrame(this.render)
 		},
 		//设置场景
-		setScene: function () {
+		setScent: function () {
 			//设置场景
 			scene = new THREE.Scene()
 			// scene.background = new THREE.Color(0xa0a0a0);
@@ -50,7 +50,7 @@ export default {
 			// 设置渲染器
 			renderer = new THREE.WebGLRenderer()
 			renderer.setClearColor(new THREE.Color(0x35B558, 1.0))
-			renderer.setSize(window.innerWidth, window.innerHeight)
+			renderer.setSize(window.innerWidth, 400)
 			renderer.shadowMapEnabled = true
 			document.getElementById('three').appendChild(renderer.domElement)
 			// document.body.appendChild(renderer.domElement)
@@ -68,9 +68,10 @@ export default {
 			light.shadow.camera.left = -12;
 			light.shadow.camera.right = 12;
 			scene.add(light);
-		},
+    },
+    //添加地面
 		addPlane: function () {
-			var planeGeometry = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+			var planeGeometry = new THREE.PlaneBufferGeometry(2000, 2000, 1, 1);
 			var material = new THREE.MeshPhongMaterial({
 				color: 0x999999,
 				depthWrite: false
@@ -124,7 +125,13 @@ export default {
 
 <style>
 .viewport {
-  font-size: 0;
+  top: 32px;
+  left: 0;
+  right: 300px;
+  bottom: 0;
+	width: 300px;
+	height: 300px;
+  /* position: absolute; */
 }
 </style>
 

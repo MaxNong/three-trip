@@ -70,7 +70,7 @@ export default {
 			scene.add(light);
 		},
 		addPlane: function () {
-			var planeGeometry = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+			var planeGeometry = new THREE.PlaneBufferGeometry(2000, 2000, 1, 1);
 			var material = new THREE.MeshPhongMaterial({
 				color: 0x999999,
 				depthWrite: false

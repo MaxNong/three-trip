@@ -32,9 +32,9 @@ export default {
 			//设置场景
 			scene = new THREE.Scene()
 			// scene.background = new THREE.Color(0xa0a0a0);
-			scene.background = new THREE.CubeTextureLoader()
-				.setPath('/static/cube/skyboxsun25deg/')
-				.load(['px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg']);
+			// scene.background = new THREE.CubeTextureLoader()
+			// 	.setPath('/static/cube/skyboxsun25deg/')
+			// 	.load(['px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg']);
 			// scene.fog = new THREE.Fog(0xa0a0a0, 500, 1000);
 		},
 		//设置相机
@@ -70,7 +70,7 @@ export default {
 			scene.add(light);
 		},
 		addPlane: function () {
-			var planeGeometry = new THREE.PlaneBufferGeometry(1000, 1000, 1, 1);
+			var planeGeometry = new THREE.PlaneBufferGeometry(2000, 2000, 1, 1);
 			var material = new THREE.MeshPhongMaterial({
 				color: 0x999999,
 				depthWrite: false
