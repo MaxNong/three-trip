@@ -135,20 +135,12 @@ export default {
       // var helper = new THREE.DirectionalLightHelper(light, 5);
       // scene.add(helper);
 
-      // let  geometry = new THREE.BoxGeometry(10, 10, 10, 2, 2, 2);
-      // let material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-      // let box1 = new THREE.Mesh(geometry, material);
-      // let helper = new THREE.FaceNormalsHelper(box1, 2, 0x00ff00, 1);
-      // scene.add(box1);
-      // scene.add(helper)
-
-      var light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
-      var helper = new THREE.HemisphereLightHelper(light, 500);
-      scene.add(helper);
-
-      // var plane = new THREE.Plane(new THREE.Vector3(1, 1, 0.2), 3);
-      // var helper = new THREE.PlaneHelper(plane, 100, 0xffff00);
-      // scene.add(helper);
+      let  geometry = new THREE.BoxGeometry(10, 10, 10, 2, 2, 2);
+      let material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+      let box1 = new THREE.Mesh(geometry, material);
+      let helper = new THREE.FaceNormalsHelper(box1, 2, 0x00ff00, 1);
+      scene.add(box);
+      scene.add(helper)
     },
     //添加立方体
     addCube: function () {

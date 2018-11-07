@@ -48,13 +48,11 @@ export default {
     //设置相机
     setCamera: function () {
       // 设置相机
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100000)
+      camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 100000)
       camera.position.x = 0
       camera.position.y = 800
       camera.position.z = 800
       camera.lookAt(scene.position)
-      // var helper = new THREE.CameraHelper( camera );
-      // scene.add( helper );
     },
     setRenderer: function () {
       // 设置渲染器
@@ -109,46 +107,17 @@ export default {
       controls = new THREE.OrbitControls(camera)
     },
     addArrowHelper: function () {
-      // var dir = new THREE.Vector3(1, 2, 0);
+      var dir = new THREE.Vector3(1, 2, 0);
 
-      // //normalize the direction vector (convert to vector of length 1)
-      // dir.normalize();
+      //normalize the direction vector (convert to vector of length 1)
+      dir.normalize();
 
-      // var origin = new THREE.Vector3(0, 0, 0);
-      // var length = 1;
-      // var hex = 0x0C0D0E;
+      var origin = new THREE.Vector3(0, 0, 0);
+      var length = 1;
+      var hex = 0xffff00;
 
-      // var arrowHelper = new THREE.ArrowHelper(dir, origin, length, hex);
-      // scene.add(arrowHelper);
-
-      var axesHelper = new THREE.AxesHelper(1000);
-      scene.add(axesHelper);
-
-
-      //添加3dobject并查看对象碰撞体大小
-      var sphere = new THREE.SphereGeometry();
-      var object = new THREE.Mesh(sphere, new THREE.MeshBasicMaterial(0xff0000));
-      var box = new THREE.BoxHelper(object, 0xffff00);
-      scene.add(box);
-
-      // var light = new THREE.DirectionalLight(0xFFFFFF);
-      // var helper = new THREE.DirectionalLightHelper(light, 5);
-      // scene.add(helper);
-
-      // let  geometry = new THREE.BoxGeometry(10, 10, 10, 2, 2, 2);
-      // let material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-      // let box1 = new THREE.Mesh(geometry, material);
-      // let helper = new THREE.FaceNormalsHelper(box1, 2, 0x00ff00, 1);
-      // scene.add(box1);
-      // scene.add(helper)
-
-      var light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
-      var helper = new THREE.HemisphereLightHelper(light, 500);
-      scene.add(helper);
-
-      // var plane = new THREE.Plane(new THREE.Vector3(1, 1, 0.2), 3);
-      // var helper = new THREE.PlaneHelper(plane, 100, 0xffff00);
-      // scene.add(helper);
+      var arrowHelper = new THREE.ArrowHelper(dir, origin, length, hex);
+      scene.add(arrowHelper);
     },
     //添加立方体
     addCube: function () {
@@ -169,8 +138,6 @@ export default {
         '/static/obj/Zed_StormNinja.obj',
         function (object) {
           scene.add(object);
-          var box = new THREE.BoxHelper(object, 0xffff00);
-          scene.add(box);
         },
         function (xhr) {
           console.log((xhr.loaded / xhr.total * 100) + '% loaded');

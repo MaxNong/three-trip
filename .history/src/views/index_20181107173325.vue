@@ -143,12 +143,8 @@ export default {
       // scene.add(helper)
 
       var light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
-      var helper = new THREE.HemisphereLightHelper(light, 500);
+      var helper = new THREE.HemisphereLightHelper(light, 5);
       scene.add(helper);
-
-      // var plane = new THREE.Plane(new THREE.Vector3(1, 1, 0.2), 3);
-      // var helper = new THREE.PlaneHelper(plane, 100, 0xffff00);
-      // scene.add(helper);
     },
     //添加立方体
     addCube: function () {
